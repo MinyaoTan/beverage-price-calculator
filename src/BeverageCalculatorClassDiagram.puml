@@ -1,0 +1,24 @@
+@startuml
+
+BeverageCalculatorGUI -- BeverageCalculator
+BeverageCalculator -- BeverageSelection
+Beverage -- BeverageSelection
+Beverage <|-- Coffee
+Beverage <|-- BlackTea
+Beverage <|-- GreenTea
+Beverage <|-- AddOn
+AddOn o-- Beverage
+AddOn <|-- Honey
+AddOn <|-- Ice
+AddOn <|-- Chocolate
+AddOn <|-- Milk
+
+class Beverage <<interface>> {
+
+}
+
+class AddOn <<interface>> {
+
+}
+
+@enduml
