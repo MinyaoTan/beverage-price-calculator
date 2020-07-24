@@ -34,4 +34,4 @@ List of features ready and TODOs for future development
 Project is finished
 
 ## Contact
-Created by [@flynerdpl](https://www.flynerd.pl/) - feel free to contact me!
+Created by [CherylTan](https://www.linkedin.com/in/cheryl-tan-72176684/) - feel free to contact me!
