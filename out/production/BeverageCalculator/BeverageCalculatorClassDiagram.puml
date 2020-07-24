@@ -1,8 +1,8 @@
 @startuml
 
-BeverageCalculator.BeverageCalculatorGUI -- BeverageCalculator
+BeverageCalculatorGUI -- BeverageCalculator
 BeverageCalculator -- BeverageSelection
-Beverage -- BeverageSelection
+Beverage --o BeverageSelection
 Beverage <|-- Coffee
 Beverage <|-- BlackTea
 Beverage <|-- GreenTea
@@ -17,7 +17,7 @@ class Beverage <<interface>> {
 
 }
 
-class AddOn <<interface>> {
+class AddOn {
 
 }
 

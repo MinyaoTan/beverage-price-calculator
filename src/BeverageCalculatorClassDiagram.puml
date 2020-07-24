@@ -1,8 +1,8 @@
 @startuml
 
-BeverageCalculator.BeverageCalculatorGUI -- BeverageCalculator
+BeverageCalculatorGUI -- BeverageCalculator
 BeverageCalculator -- BeverageSelection
-Beverage -- BeverageSelection
+Beverage --o BeverageSelection
 Beverage <|-- Coffee
 Beverage <|-- BlackTea
 Beverage <|-- GreenTea
@@ -13,12 +13,40 @@ AddOn <|-- Ice
 AddOn <|-- Chocolate
 AddOn <|-- Milk
 
-class Beverage <<interface>> {
-
+class BeverageCalculatorGUI {
+    +initComponents()
+    +addTaskPerformer(ActionListener)
+    +getBeverage() : String
+    +honey() : boolean
+    +ice() : boolean
+    +chocolate() : boolean
+    +milk() : boolean
+    +displayTotal(double)
+    +displayDescription(String)
 }
 
-class AddOn <<interface>> {
+class BeverageCalculator {
+    -gui : BeverageCalculatorGUI
+    -beverage : BeverageSelection
+    +actionPerformed(ActionEvent)
+    +updateGUI()
+}
 
+class BeverageSelection {
+    -drink : Beverage
+    -total : double
+    +getDrink() : Beverage
+    +getTotal() : double
+    +setDrink(Beverage)
+}
+
+class Beverage <<interface>> {
+    +getName() : String
+    +getPrice() : double
+}
+
+abstract class AddOn {
+    #beverage : Beverage
 }
 
 @enduml
